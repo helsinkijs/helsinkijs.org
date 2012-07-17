@@ -567,3 +567,7 @@ dd p:first-child {
   font-size: .85em;
   font-style: italic;
 }
+
+.logo {
+  margin: 10px;
+}
