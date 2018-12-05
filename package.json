@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:helsinkijs/helsinkijs.github.com.git",
   "author": "Margarita Obraztsova <marharyta.obraztsova@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commitizen": "^3.0.5"
+  }
 }
