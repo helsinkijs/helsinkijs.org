@@ -28,9 +28,18 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -57,11 +66,15 @@ p {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   min-height: 40px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
   p {
+    -webkit-box-flex: 3;
+    -ms-flex: 3 100%;
     flex: 3 100%;
   }
 }
@@ -73,16 +86,23 @@ p.about {
   font-size: 1em;
   line-height: 1.5;
   padding-bottom: 30px;
+  -webkit-box-flex: 3;
+  -ms-flex: 3 100%;
   flex: 3 100%;
 }
 
 p.next {
   text-align: left;
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
   flex: 3;
+  -ms-flex: 3 100%;
   flex: 3 100%;
 }
 div.image {
   height: 208px;
+  -webkit-box-flex: 3;
+  -ms-flex: 3 100%;
   flex: 3 100%;
   margin-bottom: 15px;
 }
@@ -99,6 +119,8 @@ h1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   font-size: 6em;
+  -webkit-box-flex: 3;
+  -ms-flex: 3 100%;
   flex: 3 100%;
 }
 
@@ -123,7 +145,6 @@ p.link {
 p.link > a {
   height: 20px;
   text-decoration: none;
-  text-decoration-color: #fde201;
   color: black;
   font-weight: 300;
   display: inline-block;
