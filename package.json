@@ -1,11 +1,11 @@
 {
-  "name": "helsinkijs.github.com",
+  "name": "helsinkijs.org",
   "version": "1.0.0",
   "description": "HelsinkiJS official landing",
-  "main": "index.js",
   "repository": "git@github.com:helsinkijs/helsinkijs.github.com.git",
   "author": "Margarita Obraztsova <marharyta.obraztsova@gmail.com>",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "commitmsg": "validate-commit-msg"
   },
