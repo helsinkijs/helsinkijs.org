@@ -1,0 +1,43 @@
+{
+  "name": "helsinkijs.github.com",
+  "version": "1.0.0",
+  "description": "HelsinkiJS official landing",
+  "main": "index.js",
+  "repository": "git@github.com:helsinkijs/helsinkijs.github.com.git",
+  "author": "Margarita Obraztsova <marharyta.obraztsova@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "commitmsg": "validate-commit-msg"
+  },
+  "dependencies": {
+    "commitizen": "^3.0.5"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.2.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "validate-commit-msg": {
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore",
+      "revert"
+    ],
+    "warnOnFail": false,
+    "maxSubjectLength": 100,
+    "subjectPattern": "^[A-Z]+-[0-9]+ - .*",
+    "subjectPatternErrorMsg": "Subject must be in format 'CMS-123 - Commit message'",
+    "helpMessage": ""
+  }
+}
