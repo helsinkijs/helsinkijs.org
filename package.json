@@ -10,7 +10,8 @@
     "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
-    "commitizen": "^3.0.5"
+    "commitizen": "^3.0.5",
+    "http-server": "^0.11.1"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0",
