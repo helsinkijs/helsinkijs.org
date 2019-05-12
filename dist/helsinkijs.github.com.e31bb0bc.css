@@ -15,24 +15,25 @@ body .wrapper {
   position: relative;
   width: 100%;
   width: 100vw;
+  min-height: 100vh;
   background-color: #F7DF1E;
   /* #fde201*/
   overflow-x: hidden;
 }
-@media (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+@media (min-width: 318px) and (max-width: 767px) and (orientation: portrait) {
   body .wrapper {
     min-height: 100vh;
     overflow-y: visible;
   }
 }
-@media (min-width: 320px) and (max-width: 612px) and (orientation: landscape) {
+@media (min-width: 318px) and (max-width: 589px) and (orientation: landscape) {
   body .wrapper {
     min-height: 200vh;
     height: 200vh;
     overflow-y: visible;
   }
 }
-@media (min-width: 613px) {
+@media (max-width: 590px) {
   body .wrapper {
     min-height: 100vh;
     height: 100%;
