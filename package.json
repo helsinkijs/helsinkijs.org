@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "prebuild": "rimraf docs/",
+    "prebuild": "rimraf docs/*.*",
     "build": "parcel build index.html --no-content-hash -d docs/",
     "start": "parcel serve index.html -d docs/",
     "commitmsg": "validate-commit-msg"
