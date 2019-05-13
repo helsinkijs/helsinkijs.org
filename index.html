@@ -25,12 +25,10 @@
   <meta name="msapplication-TileColor" content="#ffc40d" />
   <meta name="theme-color" content="#F7DF1E" />
 
-  <link rel="stylesheet" href="./style.min.css" />
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131030386-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-131030386-1');
   </script>
@@ -38,33 +36,30 @@
 
 <body>
   <div class="wrapper">
-    <div class="placeholder">
+    <div class="landing">
       <div class="image">
-        <img src="./assets/cathedral2.svg" alt="HelsinkiJS logo" />
+        <img src="./assets/cathedral3.svg" alt="HelsinkiJS logo" />
       </div>
 
       <h1>HelsinkiJS</h1>
       <p class="about">Regular monthly JavaScript meetups in Helsinki</p>
-      <p class="link">
-        <a href="https://meetabit.com/communities/helsinkijs">
+      <div class="links">
+        <a href="https://meetabit.com/communities/helsinkijs" class="link">
           Attend upcoming events
         </a>
-      </p>
-      <p class="link">
-        <a href="https://www.facebook.com/groups/helsinkijs/">
+        <a href="https://www.facebook.com/groups/helsinkijs/" class="link">
           Join Facebook group
         </a>
-      </p>
-      <p class="link">
-        <a href="https://twitter.com/helsinkijs">
+        <a href="https://twitter.com/helsinkijs" class="link">
           Follow us on Twitter
         </a>
-      </p>
-      <p class="link">
-        <a href="https://meetabit.com/communities/helsinkijs/talk_proposals/new">Become a speaker</a>
-      </p>
+        <a href="https://meetabit.com/communities/helsinkijs/talk_proposals/new" class="link">
+          Become a speaker
+        </a>
+      </div>
     </div>
   </div>
+  <script src="./index.js"></script>
 </body>
 
 </html>
