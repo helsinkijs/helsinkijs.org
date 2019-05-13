@@ -7,6 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "prebuild": "rimraf docs/",
+    "build": "parcel build index.html --no-content-hash -d docs/",
+    "start": "parcel serve index.html -d docs/",
     "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
@@ -19,6 +22,7 @@
   "devDependencies": {
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^1.2.0",
+    "rimraf": "^2.6.3",
     "validate-commit-msg": "^2.14.0"
   },
   "config": {
