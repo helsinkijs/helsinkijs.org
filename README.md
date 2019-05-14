@@ -11,5 +11,5 @@ To generate /docs directory with parcel
 
 to avoid weird web socket with parcel:
 
-`parcel index.html  --out-dir docs/ --no-hmr`
+`parcel index.html  --out-dir docs/ --no-hmr NODE_ENV=production`
 
