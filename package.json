@@ -9,25 +9,27 @@
   "scripts": {
     "prebuild": "rimraf docs/*.*",
     "build": "parcel build index.html --no-content-hash -d docs/",
-    "start": "parcel serve index.html -d docs/",
-    "commitmsg": "validate-commit-msg"
-  },
-  "dependencies": {
-    "autoprefixer": "^9.5.0",
-    "commitizen": "^3.0.5",
-    "http-server": "^0.11.1",
-    "parcel": "^1.12.3",
-    "sass": "^1.17.4"
+    "start": "parcel serve index.html -d docs/"
   },
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
-    "husky": "^1.2.0",
+    "http-server": "^0.11.1",
+    "husky": "^3.0.0",
+    "parcel": "^1.12.3",
     "rimraf": "^2.6.3",
+    "sass": "^1.22.5",
     "validate-commit-msg": "^2.14.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
     }
   },
   "validate-commit-msg": {
