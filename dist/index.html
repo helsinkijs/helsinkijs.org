@@ -42,11 +42,7 @@ var supportsCssVars = function supportsCssVars() {
 };
 
 supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-
   <link rel="stylesheet" href="/helsinkijs.org.e31bb0bc.css"></head>
-
-  </head>
-
 
   <body>
     <main>
@@ -140,7 +136,9 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
       var i;
       r = o(" "), e = o(" "), t = o(" ");
 
-      for (var n = 0; n < arguments.length; n++) (r -= o(arguments[n])) < 0 && (r += 1), (e -= o(arguments[n])) < 0 && (e += 1), (t -= o(arguments[n])) < 0 && (t += 1);
+      for (var n = 0; n < arguments.length; n++) {
+        (r -= o(arguments[n])) < 0 && (r += 1), (e -= o(arguments[n])) < 0 && (e += 1), (t -= o(arguments[n])) < 0 && (t += 1);
+      }
 
       return o = null, function () {
         var o = 2091639 * r + 2.3283064365386963e-10 * a;
@@ -148,14 +146,18 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
       };
     }(r) : Math.random, this.p = n(e), this.perm = new Uint8Array(512), this.permMod12 = new Uint8Array(512);
 
-    for (var t = 0; t < 512; t++) this.perm[t] = this.p[255 & t], this.permMod12[t] = this.perm[t] % 12;
+    for (var t = 0; t < 512; t++) {
+      this.perm[t] = this.p[255 & t], this.permMod12[t] = this.perm[t] % 12;
+    }
   }
 
   function n(r) {
     var e,
         t = new Uint8Array(256);
 
-    for (e = 0; e < 256; e++) t[e] = e;
+    for (e = 0; e < 256; e++) {
+      t[e] = e;
+    }
 
     for (e = 0; e < 255; e++) {
       var a = e + ~~(r() * (256 - e)),
