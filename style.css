@@ -5,7 +5,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -16,90 +15,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background: black;
   position: relative;
   width: 100vw;
-  & .wrapper {
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: transparent; /* #fde201*/ /*#F7DF1E*/
-    overflow-x: hidden;
-
-    &
-      @media
-      (min-width: 318px)
-      and
-      (max-width: 767px)
-      and
-      (orientation: portrait) {
-      min-height: 100vh;
-      overflow-y: visible;
-    }
-
-    &
-      @media
-      (min-width: 318px)
-      and
-      (max-width: 589px)
-      and
-      (orientation: landscape) {
-      min-height: 200vh;
-      height: 200vh;
-      overflow-y: visible;
-    }
-
-    & @media (max-width: 590px) {
-      min-height: 100vh;
-      height: 100%;
-      height: 100vh;
-    }
-
-    & .landing {
-      width: 100%;
-      min-height: 350px;
-      position: absolute;
-      top: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translateY(-50%);
-    }
-  }
 }
-
-/*style image */
-
-div.image {
-  height: 150px;
-  width: 100%;
-  & img {
-    width: auto;
-    max-height: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-/*style main heading*/
 
 h1 {
   text-align: center;
   font-weight: 700;
-
-  & @media (min-width: 481px) and (max-width: 767px) {
-    font-size: 4.5em;
-  }
-
-  & @media (min-width: 320px) and (max-width: 480px) {
-    font-size: 4em;
-  }
+  width: 100%;
+  font-size: 19.85vw;
+  color: rgb(255, 254, 254);
+  line-height: 1;
+  font-family: Helvetica, sans-serif;
+  animation: 1s both fadeIn;
 }
 
-/*small description*/
-
-p.about {
+.about {
+  color: white;
   text-align: right;
   text-transform: uppercase;
   font-family: "Josefin Sans", sans-serif;
@@ -109,17 +44,14 @@ p.about {
   animation: 1s 1s both fadeIn;
 }
 
-/*style links*/
-div.links {
+.links {
   margin-top: 2rem;
-  box-sizing: border-box;
   text-transform: uppercase;
   align-self: start;
   margin-left: 1rem;
   animation: 1s 2s both fadeIn;
 
-  & a.link {
-    box-sizing: border-box;
+  & a {
     display: block;
     padding: 0.25rem;
     text-decoration: none;
@@ -127,31 +59,13 @@ div.links {
     font-weight: 300;
     text-align: left;
     font-family: Helvetica, sans-serif;
-
     font-size: 1.58rem;
     line-height: 1.35;
-
     border-top: 1px solid white;
   }
 
-  & a.link::before {
-    content: "\2192";
-  }
-}
-
-@media (min-width: 320px) and (max-width: 830px) {
-  & div.links {
-    display: block;
-  }
-  & a.link {
-    display: block;
-    width: 100%;
-
-    font-weight: 300;
-  }
-
-  & h1 {
-    margin-top: 18px;
+  & a::before {
+    content: "\2192 ";
   }
 }
 
@@ -169,25 +83,4 @@ div.links {
   position: relative;
   justify-content: start;
   align-items: center;
-
-  background-color: black;
-}
-
-.content__title {
-  width: 100%;
-  z-index: 100;
-  font-size: 19.85vw;
-  color: rgb(255, 254, 254);
-  line-height: 1;
-  font-family: Helvetica, sans-serif;
-  animation: 1s both fadeIn;
-}
-
-p {
-  color: rgb(255, 255, 255);
-  z-index: 1000;
-}
-
-div.links {
-  z-index: 1000;
 }
