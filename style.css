@@ -17,6 +17,7 @@
   box-sizing: border-box;
 }
 body {
+  background: black;
   position: relative;
   width: 100vw;
   & .wrapper {

@@ -1,6 +1,6 @@
-const rayCount = 500;
-const rayPropCount = 8;
-const rayPropsLength = rayCount * rayPropCount;
+import { createNoise3D } from "./simplex-noise.js";
+
+const noise3D = createNoise3D();
 const baseLength = 200;
 const rangeLength = 200;
 const baseSpeed = 0.05;
@@ -17,58 +17,49 @@ const yOff = 0.0015;
 const zOff = 0.0015;
 const backgroundColor = "hsla(220,60%,3%,1)";
 
-let container;
-let canvas;
-let ctx;
-let center;
-let tick;
-let simplex;
-let rayProps;
+const rayCount = 500;
+const rayPropCount = 8;
+const rayPropsLength = rayCount * rayPropCount;
+const rayProps = new Float32Array(rayPropsLength);
 
-function setup() {
-  createCanvas();
-  resize();
-  initRays();
-  draw();
+let tick = 0;
+
+const container = document.querySelector(".content--canvas");
+const canvas = {
+  a: document.createElement("canvas"),
+  b: document.createElement("canvas"),
+};
+container.appendChild(canvas.b);
+const ctx = {
+  a: canvas.a.getContext("2d"),
+  b: canvas.b.getContext("2d"),
+};
+
+let center = [0, 0];
+resize();
+window.addEventListener("resize", resize);
+
+const rand = (n) => n * Math.random();
+for (let i = 0; i < rayPropsLength; i += rayPropCount) {
+  initRay(i);
 }
-
-function initRays() {
-  tick = 0;
-  simplex = new SimplexNoise();
-  rayProps = new Float32Array(rayPropsLength);
-
-  let i;
-
-  for (i = 0; i < rayPropsLength; i += rayPropCount) {
-    initRay(i);
-  }
-}
+draw();
 
 function initRay(i) {
-  let length, x, y1, y2, n, life, ttl, width, speed, hue;
-
-  length = baseLength + rand(rangeLength);
-  x = rand(canvas.a.width);
-  y1 = center[1] + noiseStrength;
-  y2 = center[1] + noiseStrength - length;
-  n = simplex.noise3D(x * xOff, y1 * yOff, tick * zOff) * noiseStrength;
+  let length = baseLength + rand(rangeLength);
+  let x = rand(canvas.a.width);
+  let y1 = center[1] + noiseStrength;
+  let y2 = center[1] + noiseStrength - length;
+  let n = noise3D(x * xOff, y1 * yOff, tick * zOff) * noiseStrength;
   y1 += n;
   y2 += n;
-  life = 0;
-  ttl = baseTTL + rand(rangeTTL);
-  width = baseWidth + rand(rangeWidth);
-  speed = baseSpeed + rand(rangeSpeed) * (round(rand(1)) ? 1 : -1);
-  hue = baseHue + rand(rangeHue);
+  let life = 0;
+  let ttl = baseTTL + rand(rangeTTL);
+  let width = baseWidth + rand(rangeWidth);
+  let speed = baseSpeed + rand(2 * rangeSpeed) - rangeSpeed;
+  let hue = baseHue + rand(rangeHue);
 
   rayProps.set([x, y1, y2, life, ttl, width, speed, hue], i);
-}
-
-function drawRays() {
-  let i;
-
-  for (i = 0; i < rayPropsLength; i += rayPropCount) {
-    updateRay(i);
-  }
 }
 
 function updateRay(i) {
@@ -98,14 +89,13 @@ function updateRay(i) {
   rayProps[i] = x;
   rayProps[i4] = life;
 
-  (checkBounds(x) || life > ttl) && initRay(i);
+  (x < 0 || x > canvas.a.width || life > ttl) && initRay(i);
 }
 
 function drawRay(x, y1, y2, life, ttl, width, hue) {
   let gradient;
 
   gradient = ctx.a.createLinearGradient(x, y1, x, y2);
-  console.log("hue", hue);
   gradient.addColorStop(0, `hsla(${hue},100%,65%,0)`);
   gradient.addColorStop(0.25, `hsla(${hue},100%,65%,${fadeInOut(life, ttl)})`);
   gradient.addColorStop(
@@ -127,23 +117,9 @@ function drawRay(x, y1, y2, life, ttl, width, hue) {
   ctx.a.restore();
 }
 
-function checkBounds(x) {
-  return x < 0 || x > canvas.a.width;
-}
-
-function createCanvas() {
-  container = document.querySelector(".content--canvas");
-  canvas = {
-    a: document.createElement("canvas"),
-    b: document.createElement("canvas"),
-  };
-
-  container.appendChild(canvas.b);
-  ctx = {
-    a: canvas.a.getContext("2d"),
-    b: canvas.b.getContext("2d"),
-  };
-  center = [];
+function fadeInOut(t, m) {
+  const hm = 0.5 * m;
+  return Math.abs(((t + hm) % m) - hm) / hm;
 }
 
 function resize() {
@@ -176,11 +152,8 @@ function draw() {
   ctx.a.clearRect(0, 0, canvas.a.width, canvas.a.height);
   ctx.b.fillStyle = backgroundColor;
   ctx.b.fillRect(0, 0, canvas.b.width, canvas.a.height);
-  drawRays();
+  for (let i = 0; i < rayPropsLength; i += rayPropCount) updateRay(i);
   render();
 
   window.requestAnimationFrame(draw);
 }
-
-window.addEventListener("load", setup);
-window.addEventListener("resize", resize);
