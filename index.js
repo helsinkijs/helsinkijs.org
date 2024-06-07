@@ -1,8 +1,3 @@
-import "./style.scss";
-import "animate.css";
-
-("use strict");
-
 const rayCount = 500;
 const rayPropCount = 8;
 const rayPropsLength = rayCount * rayPropCount;
