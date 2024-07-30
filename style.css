@@ -50,7 +50,8 @@ h1 {
 
 .links {
   margin-top: 2rem;
-  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-transform: lowercase;
   align-self: start;
   margin-left: 2rem;
   animation: 1s 2s both fadeIn;
@@ -109,4 +110,25 @@ h1 {
 
 .videos div {
   padding: 0.25rem;
+}
+
+.videos-h2 {
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 3.6rem;
+  animation: 1s 1s both fadeIn;
+  margin-left: 2rem;
+}
+
+footer {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.58rem;
+  line-height: 1.35;
+  margin-left: 1rem;
 }
