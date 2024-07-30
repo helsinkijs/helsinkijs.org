@@ -17,7 +17,7 @@
 }
 
 body {
-  background: black;
+  background: #010b26;
   position: relative;
   width: 100vw;
 }
@@ -27,18 +27,22 @@ h1 {
   font-weight: 700;
   width: 100%;
   font-size: 19.85vw;
+  font-size: 20.85vw;
   color: rgb(255, 254, 254);
   line-height: 1;
   font-family: Helvetica, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   animation: 1s both fadeIn;
+  display: block;
+  
 }
 
 .about {
   color: white;
   text-align: right;
   text-transform: uppercase;
-  font-family: "Josefin Sans", sans-serif;
   font-family: Helvetica, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   font-size: 3.6rem;
   animation: 1s 1s both fadeIn;
@@ -48,7 +52,7 @@ h1 {
   margin-top: 2rem;
   text-transform: uppercase;
   align-self: start;
-  margin-left: 1rem;
+  margin-left: 2rem;
   animation: 1s 2s both fadeIn;
 
   & a {
@@ -59,6 +63,7 @@ h1 {
     font-weight: 300;
     text-align: left;
     font-family: Helvetica, sans-serif;
+    font-family: "Josefin Sans", sans-serif;
     font-size: 1.58rem;
     line-height: 1.35;
     border-top: 1px solid white;
@@ -83,4 +88,25 @@ h1 {
   position: relative;
   justify-content: start;
   align-items: center;
+}
+
+.videos {
+  width: 100%;
+  display: block;
+
+  height: 315px;
+  overflow-x: scroll;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.videos div {
+  padding: 0.25rem;
 }
