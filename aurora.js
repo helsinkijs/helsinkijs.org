@@ -15,7 +15,7 @@ const noiseStrength = 100;
 const xOff = 0.0015;
 const yOff = 0.0015;
 const zOff = 0.0015;
-const backgroundColor = "hsla(220,60%,3%,1)";
+const backgroundColor = "oklch(16.03% 0.06 261)";
 
 const rayCount = 500;
 const rayPropCount = 8;
