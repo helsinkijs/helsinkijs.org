@@ -1,6 +1,6 @@
 # HelsinkiJS
 
-## Speaker notes
+## Speaker guide
 
 ### Talk content
 
