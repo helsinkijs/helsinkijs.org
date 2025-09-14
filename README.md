@@ -7,6 +7,7 @@
 - If you'd like to give a talk, please [submit your proposal via Meetabit](https://www.meetabit.com/communities/helsinkijs/talk_proposals/new) (you need to be signed in to be able to do this).
 - The talk description can be only a few sentences, but the talk title should be clear and in line with what you'll talk about.
 - The ideal talk is one where you share your personal experience of working on something, the challenges you ran into and how you overcame them OR a niche topic. Introductory talks on frameworks that many people have tried or there are plenty of online materials about are less interesting.
+- It is OK to do live coding, but make sure to keep it fairly short and do a test run beforehand, the attendees are not interested in watching you install dependencies or do live debugging. 
 - We do not need speaker bios in advance, but do introduce yourself briefly at the beginning of your talk.
 - The audience is a mix of mid-level and senior developers and your talk can be very technical, if you want.
 
